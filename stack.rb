@@ -14,6 +14,7 @@ class Stack
     raise EmptyStackError if @item.nil?
     item = @item
     @item = nil
+    @empty = true
     item
   end
 
