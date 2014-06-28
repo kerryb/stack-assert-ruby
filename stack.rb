@@ -2,24 +2,20 @@ class Stack
   class EmptyStackError < RuntimeError; end
 
   def initialize
-    @empty = true
+    @items = []
   end
 
   def push item
-    @empty = false
-    @item = item
+    @items << item
   end
 
   def pop
-    raise EmptyStackError if @item.nil?
-    item = @item
-    @item = nil
-    @empty = true
-    item
+    raise EmptyStackError if empty?
+    @items.delete_at(-1)
   end
 
   def empty?
-    @empty
+    @items.empty?
   end
 end
 
