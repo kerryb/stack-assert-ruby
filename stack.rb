@@ -1,4 +1,7 @@
 class Stack
+  def push item
+  end
+
   def empty?
     true
   end
