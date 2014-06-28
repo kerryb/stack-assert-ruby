@@ -5,9 +5,11 @@ class Stack
 
   def push item
     @empty = false
+    @item = item
   end
 
   def pop
+    @item
   end
 
   def empty?
