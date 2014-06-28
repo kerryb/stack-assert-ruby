@@ -30,3 +30,10 @@ assert_equal false, stack.empty?, "A stack that's been pushed to should not be e
 stack = Stack.new
 stack.push :foo
 assert_equal :foo, stack.pop, "Popping a stack after pushing an item should return the item"
+
+stack = Stack.new
+begin
+  stack.pop
+  $stderr.puts "FAILED: Popping an empty stack should raise a Stack::EmptyStackError"
+rescue Stack::EmptyStackError
+end
