@@ -1,4 +1,6 @@
 class Stack
+  class EmptyStackError < RuntimeError; end
+
   def initialize
     @empty = true
   end
@@ -9,7 +11,10 @@ class Stack
   end
 
   def pop
-    @item
+    raise EmptyStackError if @item.nil?
+    item = @item
+    @item = nil
+    item
   end
 
   def empty?
