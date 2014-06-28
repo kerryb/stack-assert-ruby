@@ -16,7 +16,7 @@ class Stack
 end
 
 def assert_equal expected, actual, message
-  expected == actual or $stderr.puts message
+  expected == actual or $stderr.puts "FAILED: #{message} (expected #{expected.inspect}, got #{actual.inspect})"
 end
 
 assert_equal true, Stack.new.empty?, "A new stack should be empty"
