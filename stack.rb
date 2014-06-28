@@ -46,3 +46,8 @@ begin
   fail "Popping an empty stack should raise a Stack::EmptyStackError"
 rescue Stack::EmptyStackError
 end
+
+stack = Stack.new
+stack.push :foo
+stack.pop
+assert_equal true, stack.empty?, "A stack should be empty after popping the last item"
