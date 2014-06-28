@@ -52,3 +52,10 @@ stack = Stack.new
 stack.push :foo
 stack.pop
 assert_equal true, stack.empty?, "A stack should be empty after popping the last item"
+
+stack = Stack.new
+stack.push :foo
+stack.push :bar
+first = stack.pop
+second = stack.pop
+assert_equal [:bar, :foo], [first, second], "Items should be popped off the stack in LIFO order"
