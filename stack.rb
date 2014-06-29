@@ -1,9 +1,15 @@
 class Stack
+  def initialize
+    @empty = true
+  end
+
   def push item
+    @empty = false
   end
 
   def empty?
     true
+    @empty
   end
 end
 
