@@ -8,7 +8,6 @@ class Stack
   end
 
   def empty?
-    true
     @empty
   end
 end
