@@ -4,10 +4,12 @@ class Stack
   end
 
   def push item
+    @item = item
     @empty = false
   end
 
   def pop
+    @item
   end
 
   def empty?
