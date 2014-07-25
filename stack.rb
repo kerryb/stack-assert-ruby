@@ -1,5 +1,4 @@
 class Stack
-
 	def initialize
 		@items = []
 	end
@@ -19,7 +18,6 @@ class Stack
 end
 
 class StackEmptyException < RuntimeError
-
 end
 
 def assert_equal expected, actual, message
