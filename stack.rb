@@ -13,7 +13,7 @@ class Stack
 
 	def pop
 		raise StackEmptyException if empty?
-		@items.delete_at -1
+		@items.delete_at(-1)
 	end
 end
 
