@@ -72,49 +72,49 @@ rescue error
 end
 ############ TESTS ############
 
-specify "A new stack should be empty" do
+specify "A new stack is empty" do
   assert_true Stack.new.empty?
 end
 
-specify "A stack should not be empty after pushing" do
+specify "A stack is not empty after pushing" do
   stack = Stack.new
   stack.push 1
   assert_false stack.empty?
 end
 
-specify "Popping an item from the stack should return the last item added" do
+specify "Popping an item from the stack returns the last item added" do
   stack = Stack.new
   stack.push 1
   assert_equal 1, stack.pop
 end
 
-specify "Stack should be empty after popping the last item" do
+specify "A stack is empty after popping the last item" do
   stack = Stack.new
   stack.push 1
   stack.pop
   assert_true stack.empty?
 end
 
-specify "Stack should pop items in the reverse order that they were pushed" do
+specify "A stack pops items in the reverse order that they were pushed" do
   stack = Stack.new
   stack.push 1
   stack.push 2
   assert_equal [2,1], [stack.pop, stack.pop]
 end
 
-specify "A stack should not be empty if there are still items remaining" do
+specify "A stack with some items remaining is not empty" do
   stack = Stack.new
   stack.push 1, 2
   stack.pop
   assert_false stack.empty?
 end
 
-specify "An empty stack should throw an exception" do
+specify "Popping an empty stack throws an exception" do
   stack = Stack.new
   assert_raises(StackEmptyException) { stack.pop }
 end
 
-specify "Push should accept multiple items" do
+specify "Multiple items can be pushed at once" do
   stack = Stack.new
   stack.push 1, 2
   assert_equal [2,1], [stack.pop, stack.pop]
