@@ -71,7 +71,7 @@ expound "some stuff" do
 
   specify "A stack with something pushed to it is not empty" do
     stack = Stack.new
-    # stack.push(1)
+    stack.push(1)
     assert_false(stack.empty?)
   end
 
